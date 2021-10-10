@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1 [ngStyle]="{'background-color': isTechRelated === true ? 'blue' : 'yellow' }">{{ title }}</h1>
+    </div>
+    <hr>
+    <button
+    type="submit"
+    class="btn btn-primary"
+    (click)="onChange()">Tech Related?</button>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <p>{{ content }}</p>
+      <p *ngIf= "isTechRelated === true">Is Tech Related!:)</p>
+      <ng-template [ngIf]="!isTechRelated">
+        <p>
+          Is NOT Tech Related!:(
+        </p>
+      </ng-template>
+    </div>
+  </div>
+</div>
